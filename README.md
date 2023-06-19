@@ -1,1 +1,1 @@
-# utfpr-melody-gen-plataform
+# Plataforma de geração procedural de melodias
