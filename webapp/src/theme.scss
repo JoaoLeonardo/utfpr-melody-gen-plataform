@@ -44,7 +44,7 @@ h2 {
 }
 
 footer {    
-    position: absolute;
+    position: inherit;
     bottom: 0;
     width: 100%;
     background-color: mat-color($dark-accent);
