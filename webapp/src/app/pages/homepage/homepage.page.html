@@ -1,0 +1,73 @@
+<div class="d-flex column grow homepage">
+
+    <!-- Logo -->
+    <div class="homepage-logo d-flex flex-wrap justify-center align-center d-m-bottom" [class.mat-elevation-z2]="true">
+        <mat-icon class="d-pad d-m hover-div mouse-pointer" aria-hidden="false" (click)="onClickLogo()">
+            library_music
+        </mat-icon>
+        <div class="d-flex d-m column justify-center homepage-logo-title-container">
+            <p class="d-pad text-overflow-break text-center">
+                <b>Geração Procedural de Melodias com Aprendizado do Máquina</b>
+            </p>
+        </div>
+    </div>
+
+    <!-- Conteúdo -->
+    <div class="d-flex column grow justify-center">
+
+        <!-- Informações -->
+        <div class="d-flex column d-m-bottom homepage-container border-r-soft">
+
+            <div class="homepage-section homepage-primary-section d-pad">
+                <b>Gerar melodia</b>
+            </div>
+            <div class="d-pad-lg homepage-info">
+                <p class="text-justify">
+                    Para gerar uma melodia é necessário selecionar um <b>modo</b> e requisitar sua criação através do
+                    botão
+                    <b>Gerar melodia</b>.
+                </p>
+                <p class="text-justify">
+                    Após ouvir a melodia <u>não se esqueça de avalia-lá</u>. A sua opinião pode contribuir para o
+                    aprimoramento
+                    da IA!
+                </p>
+            </div>
+
+            <!-- Geração da melodia -->
+            <div class="d-pad-lg homepage-info">
+
+                <div class="row justify-end align-center">
+
+                    <!-- Modo -->
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Modo</mat-label>
+                        <input type="text" placeholder="Selecione um modo..." matInput [formControl]="ModoControl"
+                            [matAutocomplete]="auto">
+                        <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let option of modoFilteredOptions | async" [value]="option.label">
+                                {{option.label}}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+
+                    <!-- Botão -->
+                    <button class="d-m" mat-button (click)="generate()">Gerar melodia</button>
+
+                </div>
+
+                <div *ngIf="loading; else player" class="d-flex d-pad justify-center">
+                    <mat-spinner></mat-spinner>
+                </div>
+
+                <ng-template #player>
+                    <app-player [service]="service"></app-player>
+                </ng-template>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

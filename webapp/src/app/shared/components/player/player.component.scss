@@ -1,0 +1,22 @@
+@import "../../../../variables";
+
+$primary: map-get($theme, primary);
+$accent: map-get($theme, accent);
+
+.midi-visualizer {
+    border: 2px black solid;
+    max-height: 300px !important;
+    overflow: scroll;
+}
+
+.progress-bar {
+    background-color: lightgray;
+    padding: 0.25em;
+    border-radius: 8px;
+}
+
+.progress {
+    height: 0.5em;
+    border-radius: 8px;
+    background-color: mat-color($primary);
+}

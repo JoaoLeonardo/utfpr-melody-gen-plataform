@@ -1,0 +1,54 @@
+@import "../../../variables";
+
+$primary: map-get($theme, primary);
+$accent: map-get($theme, accent);
+$soft-primary: map-get($soft-accent, accent);
+$dark-accent: map-get($dark-theme, accent);
+
+.homepage-logo {
+    width: 100vw; 
+    background-color: mat-color($accent);
+    padding: 16px;
+}
+
+.homepage-logo mat-icon {
+    width: unset;
+    height: unset;
+    font-size: 150px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    box-shadow: 2px 1px 1px #000;
+}
+
+.homepage-logo-title-container {
+    font-size: 3em;
+    color: white;
+    text-shadow: 2px 0px 1px #000;
+    line-height: 1em;
+}
+
+.homepage {
+    min-height: calc(100% - 190px); // offset toolbar e footer + 8px de padding
+}
+
+.homepage-container {
+    margin-right: 10vw;
+    margin-left: 10vw;
+    background-color: white;
+    box-shadow: 4px 4px 16px rgb(0 0 0 / 50%);
+}
+
+.homepage-section {
+    line-height: 1em;
+    background-color: mat-color($soft-accent);
+    border-bottom: 4px solid #00000040;
+    font-size: 2em;
+    color: white;
+}
+
+.homepage-primary-section {
+    background-color: mat-color($primary);
+}
+
+h3 { font-size: 1.5em; }
