@@ -5,4 +5,4 @@ Atualmente são comtempladas as seguintes funcionalidades:
   - Avaliação (feedback) das melodias geradas.
 
 # Exemplo
-Exemplo de melodia gerada com a plataforma: [https://drive.google.com/drive/u/1/folders/1xCczB4mPd7WxK9Tes7NwMrAYOOZnV5_0](https://drive.google.com/file/d/1qh3C5zNZmRybMD5r_R7BZ9soqYne7TJK/view?usp=sharing)https://drive.google.com/file/d/1qh3C5zNZmRybMD5r_R7BZ9soqYne7TJK/view?usp=sharing.
+Exemplo de melodia gerada com a plataforma: [MP3](https://drive.google.com/file/d/1qh3C5zNZmRybMD5r_R7BZ9soqYne7TJK/view?usp=sharing).
