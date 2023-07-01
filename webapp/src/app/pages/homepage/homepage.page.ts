@@ -13,7 +13,7 @@ import { LabelValue } from 'src/app/shared/models/label-value';
 
 // aplicação
 import { HomepageService } from './homepage.service';
-import { getModoOptions } from './models/enums/modo';
+import { getModoOptions, getModoTemperature } from './models/enums/modo';
 
 @Component({
     selector: 'app-homepage',
@@ -70,8 +70,8 @@ export class HomepageComponent implements OnInit {
             return;
         }
 
-        this.playerController.genre = this.modoOptions.findIndex(item => 
-            item.label === this.ModoControl.value) + 1;
+        const modo = this.modoOptions.find(item => item.label === this.ModoControl.value);
+        this.playerController.genre = getModoTemperature(modo!.value);
         
         this.loading = true;
         this.service.generate(this.playerController.genre).subscribe(res => {
@@ -80,7 +80,6 @@ export class HomepageComponent implements OnInit {
             this.playerController.melody = {
                 input_sequence: this.service.playerUtil.convertToInputSequence(res)
             }
-            console.log(this.playerController.melody)
             this.onClickLogo();
         }, error => {
             this.loading = false;

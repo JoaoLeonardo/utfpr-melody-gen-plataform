@@ -14,3 +14,14 @@ export function getModoOptions(): LabelValue[] {
         return { value: keys[index], label: label };
     });
 }
+
+export function getModoTemperature(modo: ModoType): number {
+    switch (modo) {
+        case 'COMUM':
+            return 0.6;
+        case 'POPULAR':
+            return 0.2
+        default:
+            return 1.0;
+    }
+}
